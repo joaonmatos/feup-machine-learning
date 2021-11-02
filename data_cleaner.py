@@ -32,3 +32,45 @@ with open("data/client.csv", newline="") as client:
         else:
             clean_strings.append("man")
         writer.writerow(clean_strings)
+
+with open("data/disp.csv", newline="") as disposition:
+    reader = csv.reader(disposition, delimiter=";", quotechar="\"")
+    clean = open("clean-data/disposition.csv", mode="w", newline="")
+    writer = csv.writer(clean, dialect="excel")
+    writer.writerows(reader)
+
+with open("data/card_train.csv", newline="") as card:
+    reader = csv.reader(card, delimiter=";", quotechar="\"")
+    clean = open("clean-data/card_train.csv", mode="w", newline="")
+    writer = csv.writer(clean, dialect="excel")
+    writer.writerows(reader)
+
+with open("data/card_test.csv", newline="") as card:
+    reader = csv.reader(card, delimiter=";", quotechar="\"")
+    clean = open("clean-data/card_test.csv", mode="w", newline="")
+    writer = csv.writer(clean, dialect="excel")
+    writer.writerows(reader)
+
+with open("data/trans_test.csv", newline="") as transaction:
+    reader = csv.reader(transaction, delimiter=";", quotechar="\"")
+    clean = open("clean-data/transaction_test.csv", mode="w", newline="")
+    writer = csv.writer(clean, dialect="excel")
+    writer.writerows(reader)
+
+with open("data/trans_train.csv", newline="") as transaction:
+    reader = csv.reader(transaction, delimiter=";", quotechar="\"")
+    clean = open("clean-data/transaction_train.csv", mode="w", newline="")
+    writer = csv.writer(clean, dialect="excel")
+    writer.writerows(reader)
+
+with open("data/loan_train.csv", newline="") as loan:
+    reader = csv.reader(loan, delimiter=";", quotechar="\"")
+    clean = open("clean-data/loan_train.csv", mode="w", newline="")
+    writer = csv.writer(clean, dialect="excel")
+    writer.writerows(reader)
+
+with open("data/loan_test.csv", newline="") as loan:
+    reader = csv.reader(loan, delimiter=";", quotechar="\"")
+    clean = open("clean-data/loan_test.csv", mode="w", newline="")
+    writer = csv.writer(clean, dialect="excel")
+    writer.writerows(reader)
