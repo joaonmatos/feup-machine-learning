@@ -43,8 +43,8 @@ CREATE TABLE transactions(
     "date" TEXT NOT NULL,
     type TEXT NOT NULL,
     operation TEXT,
-    amount INTEGER NOT NULL,
-    balance INTEGER NOT NULL,
+    amount REAL NOT NULL,
+    balance REAL NOT NULL,
     k_symbol TEXT,
     bank TEXT,
     destination_account INTEGER,
@@ -56,6 +56,7 @@ CREATE TABLE clients (
     id INTEGER PRIMARY KEY,
     birthday TEXT NOT NULL,
     district_id INTEGER NOT NULL,
+    gender TEXT NOT NULL,
 
     FOREIGN KEY (district_id) REFERENCES districts (id)
 );
