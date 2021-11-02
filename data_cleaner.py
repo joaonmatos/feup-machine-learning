@@ -1,5 +1,10 @@
 import csv
 
+
+def no_questions(cell):
+    return "" if cell == "?" else cell
+
+
 with open("data/account.csv", newline="") as account:
     reader = csv.reader(account, delimiter=";", quotechar="\"")
     clean = open("clean-data/account.csv", mode="w", newline="")
@@ -12,7 +17,8 @@ with open("data/district.csv", newline="") as district:
     clean = open("clean-data/district.csv", mode="w", newline="")
     writer = csv.writer(clean, dialect="excel")
     for row in reader:
-        writer.writerow([elem.strip().casefold() for elem in row])
+        writer.writerow([no_questions(elem.strip().casefold())
+                        for elem in row])
 
 with open("data/client.csv", newline="") as client:
     reader = csv.reader(client, delimiter=";",
