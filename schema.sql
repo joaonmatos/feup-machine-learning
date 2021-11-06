@@ -6,6 +6,7 @@ CREATE TABLE districts(
     no_small_places INTEGER,
     no_medium_places INTEGER,
     no_large_places INTEGER,
+    no_very_large_places INTEGER,
     no_cities INTEGER,
     ratio_urban_inhabitants REAL,
     avg_salary INTEGER,
