@@ -125,7 +125,7 @@ def parse_card(data):
 
 
 # Create database
-connection = sqlite3.connect('database.db')
+connection = sqlite3.connect(f'database_{mode}.db')
 with open("schema.sql") as schema:
     sql = schema.read()
     connection.executescript(sql)
