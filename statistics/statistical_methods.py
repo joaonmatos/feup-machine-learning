@@ -1,18 +1,19 @@
 # %%
 import pandas as pd
+from pandas.io.parsers import read_csv
 
 # %% Tables
-client = pd.read_csv("../clean-data/client.csv")
-account = pd.read_csv("../clean-data/account.csv")
-disposition = pd.read_csv("../clean-data/disposition.csv")
-card = pd.read_csv("../clean-data/card_train.csv")
-loan = pd.read_csv("../clean-data/loan_train.csv")
-transaction = pd.read_csv("../clean-data/transaction_train.csv")
-card_test = pd.read_csv("../clean-data/card_test.csv")
-loan_test = pd.read_csv("../clean-data/loan_test.csv")
-transaction_test = pd.read_csv("../clean-data/transaction_test.csv")
+client = pd.read_csv("../clean-data/client.csv", dtype={"gender": "string", "district": int})
+account = pd.read_csv("../clean-data/account.csv", dtype={"district": int, "frequency": "string"})
+disposition = pd.read_csv("../clean-data/disposition.csv", dtype={"type": "string"})
+card = pd.read_csv("../clean-data/card_train.csv", dtype={"type": "string"})
+loan = pd.read_csv("../clean-data/loan_train.csv", dtype={"duration": int, "status": int})
+transaction = pd.read_csv("../clean-data/transaction_train.csv", dtype={"type": "string", "operation": "string", "k_symbol": "string", "bank": "string"})
+card_test = pd.read_csv("../clean-data/card_test.csv", dtype={"type": "string"})
+loan_test = pd.read_csv("../clean-data/loan_test.csv", dtype={"duration": int})
+transaction_test = pd.read_csv("../clean-data/transaction_test.csv", dtype={"type": "string", "operation": "string", "k_symbol": "string", "bank": "string"})
 
-# # %% Gender per Client
+# %% Gender per Client
 gender_stats = pd.crosstab(index=client['gender'], columns='count')
 gender_stats.to_csv("client_gender.csv")
 
