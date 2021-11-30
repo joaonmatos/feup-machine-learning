@@ -1,6 +1,6 @@
-operation,count
-collection from another bank,1448
-credit card withdrawal,54
-credit in cash,5304
-remittance to another bank,4375
-withdrawal in cash,13889
+operation,count,relative
+collection from another bank,1448,5.7758
+credit card withdrawal,54,0.2154
+credit in cash,5304,21.1568
+remittance to another bank,4375,17.4511
+withdrawal in cash,13889,55.4009

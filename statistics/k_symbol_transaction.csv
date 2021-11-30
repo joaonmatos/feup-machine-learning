@@ -1,8 +1,8 @@
-k_symbol,count
- ,19065
-household,42839
-insurrance payment,6592
-interest credited,70761
-old-age pension,13502
-payment for statement,58377
-sanction interest if negative balance,305
+k_symbol,count,relative
+ ,19065,9.0167
+household,42839,20.2605
+insurrance payment,6592,3.1177
+interest credited,70761,33.4661
+old-age pension,13502,6.3857
+payment for statement,58377,27.6091
+sanction interest if negative balance,305,0.1442

@@ -1,4 +1,4 @@
-type,count
-classic,127
-gold,9
-junior,41
+type,count,relative
+classic,127,71.7514
+gold,9,5.0847
+junior,41,23.1638

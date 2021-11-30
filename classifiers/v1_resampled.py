@@ -18,6 +18,7 @@ pd.DataFrame(labels_res).value_counts(subset=["loan_status"])
 # %%
 rf = RandomForestClassifier(n_estimators= 30, random_state = 19)
 rf.fit(feaures_res, labels_res)
+#Fazer Também regressão
 
 # %%
 target_dataset = pd.read_csv("features/v1/test.csv")
