@@ -1,4 +1,4 @@
-frequency,count
-issuance after transaction,93
-monthly issuance,4167
-weekly issuance,240
+frequency,count,relative
+issuance after transaction,93,2.0667
+monthly issuance,4167,92.6
+weekly issuance,240,5.3333
