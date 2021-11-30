@@ -8,6 +8,9 @@ disposition = pd.read_csv("../clean-data/disposition.csv")
 card = pd.read_csv("../clean-data/card_train.csv")
 loan = pd.read_csv("../clean-data/loan_train.csv")
 transaction = pd.read_csv("../clean-data/transaction_train.csv")
+card_test = pd.read_csv("../clean-data/card_test.csv")
+loan_test = pd.read_csv("../clean-data/loan_test.csv")
+transaction_test = pd.read_csv("../clean-data/transaction_test.csv")
 
 # # %% Gender per Client
 gender_stats = pd.crosstab(index=client['gender'], columns='count')
@@ -64,3 +67,33 @@ k_symbol_transaction_stats.to_csv("k_symbol_transaction.csv")
 
 bank_transaction_stats = pd.crosstab(index=transaction['bank'], columns='count')
 bank_transaction_stats.to_csv("bank_transaction.csv")
+
+# %% Type per Card (Test)
+
+type_card_test_stats = pd.crosstab(index=card_test['type'], columns='count')
+type_card_test_stats.to_csv("type_card_test.csv")
+
+# %% Duration per Loan (Test)
+
+duration_loan_test_stats = pd.crosstab(index=loan_test['duration'], columns='count')
+duration_loan_test_stats.to_csv("duration_loan_test.csv")
+
+# %% Type per Transaction (Test)
+
+type_transaction_test_stats = pd.crosstab(index=transaction_test['type'], columns='count')
+type_transaction_test_stats.to_csv("type_transaction_test.csv")
+
+# %% Operation per Transaction (Test)
+
+operation_transaction_test_stats = pd.crosstab(index=transaction_test['operation'], columns='count')
+operation_transaction_test_stats.to_csv("operation_transaction_test.csv")
+
+# %% K_symbol per Transaction (Test)
+
+k_symbol_transaction_test_stats = pd.crosstab(index=transaction_test['k_symbol'], columns='count')
+k_symbol_transaction_test_stats.to_csv("k_symbol_transaction_test.csv")
+
+# %% Bank per Transaction (Test)
+
+bank_transaction_test_stats = pd.crosstab(index=transaction_test['bank'], columns='count')
+bank_transaction_test_stats.to_csv("bank_transaction_test.csv")
