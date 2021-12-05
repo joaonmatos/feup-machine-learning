@@ -19,7 +19,7 @@ to clear the project data and obtain tables with all the necessary information.
 `python db_importer.py`
 to parse the data and create the database.
 
-To obtain some statistics, you should run the files in `statistics` folder.
+To obtain some statistics, you should run `python statiscal_methods.py` and check the files in `statistics` folder.
 
 To run the developed algorithms, you should run the files in `classifiers` folder.
 
