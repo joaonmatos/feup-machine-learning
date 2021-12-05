@@ -80,6 +80,23 @@ with open("statistics/numbers/disposition_type.csv", "w", newline='') as outfile
     writer.writerow(["Mode", disposition['type'].mode()[0]])
 
 
+# %% District
+# Region
+# No. of inhabitants
+# No. of municipalities with inhabitants < 499
+# No. of municipalities with inhabitants 500-1999
+# No. of municipalities with inhabitants 2000-9999
+# No. of municipalities with inhabitants >10000
+# No. of cities
+# Ratio of urban inhabitants
+# Average salary
+# Unemploymant rate '95
+# Unemploymant rate '96
+# No. of enterpreneurs per 1000 inhabitants
+# No. of commited crimes '95
+# No. of commited crimes '96
+
+
 # %% Card
 # Type (Train)
 card_type_stats = pd.crosstab(index=card['type'], columns='count')
@@ -130,6 +147,7 @@ with open("statistics/numbers/loan_amount.csv", "w", newline='') as outfile:
     writer.writerow(["3rd Quarter", loan['amount'].quantile(0.75)])
     writer.writerow(["Standard deviation", loan['amount'].std()])
     writer.writerow(["Variance", loan['amount'].var()])
+    writer.writerow(["Amplitude", loan['amount'].max()-loan['amount'].min()])
 
 # Payments (Train)
 loan_payments_stats = pd.crosstab(index=loan['payments'], columns='count')
@@ -145,6 +163,7 @@ with open("statistics/numbers/loan_payments.csv", "w", newline='') as outfile:
     writer.writerow(["3rd Quarter", loan['payments'].quantile(0.75)])
     writer.writerow(["Standard deviation", loan['payments'].std()])
     writer.writerow(["Variance", loan['payments'].var()])
+    writer.writerow(["Amplitude", loan['payments'].max()-loan['payments'].min()])
 
 # Status (Train)
 loan_status_stats = pd.crosstab(index=loan['status'], columns='count')
@@ -184,6 +203,7 @@ with open("statistics/numbers/loan_amount_test.csv", "w", newline='') as outfile
     writer.writerow(["3rd Quarter", loan_test['amount'].quantile(0.75)])
     writer.writerow(["Standard deviation", loan_test['amount'].std()])
     writer.writerow(["Variance", loan_test['amount'].var()])
+    writer.writerow(["Amplitude", loan_test['amount'].max()-loan_test['amount'].min()])
     
 # Payments (Test)
 loan_payments_test_stats = pd.crosstab(index=loan_test['payments'], columns='count')
@@ -199,6 +219,7 @@ with open("statistics/numbers/loan_payments_test.csv", "w", newline='') as outfi
     writer.writerow(["3rd Quarter", loan_test['payments'].quantile(0.75)])
     writer.writerow(["Standard deviation", loan_test['payments'].std()])
     writer.writerow(["Variance", loan_test['payments'].var()])
+    writer.writerow(["Amplitude", loan_test['payments'].max()-loan_test['payments'].min()])
     
 
 # %% Transaction
@@ -261,6 +282,7 @@ with open("statistics/numbers/transaction_amount.csv", "w", newline='') as outfi
     writer.writerow(["3rd Quarter", transaction['amount'].quantile(0.75)])
     writer.writerow(["Standard deviation", transaction['amount'].std()])
     writer.writerow(["Variance", transaction['amount'].var()])
+    writer.writerow(["Amplitude", transaction['amount'].max()-transaction['amount'].min()])
     
 # Balance (Train)
 transaction_balance_stats = pd.crosstab(index=transaction['balance'], columns='count')
@@ -276,6 +298,7 @@ with open("statistics/numbers/transaction_balance.csv", "w", newline='') as outf
     writer.writerow(["3rd Quarter", transaction['balance'].quantile(0.75)])
     writer.writerow(["Standard deviation", transaction['balance'].std()])
     writer.writerow(["Variance", transaction['balance'].var()])
+    writer.writerow(["Amplitude", transaction['balance'].max()-transaction['balance'].min()])
 
 # Type (Test)
 transaction_type_test_stats = pd.crosstab(index=transaction_test['type'], columns='count')
@@ -336,6 +359,7 @@ with open("statistics/numbers/transaction_amount_test.csv", "w", newline='') as 
     writer.writerow(["3rd Quarter", transaction_test['amount'].quantile(0.75)])
     writer.writerow(["Standard deviation", transaction_test['amount'].std()])
     writer.writerow(["Variance", transaction_test['amount'].var()])
+    writer.writerow(["Amplitude", transaction_test['amount'].max()-transaction_test['amount'].min()])
     
 # Balance (Test)
 transaction_balance_test_stats = pd.crosstab(index=transaction_test['balance'], columns='count')
@@ -351,3 +375,4 @@ with open("statistics/numbers/transaction_balance_test.csv", "w", newline='') as
     writer.writerow(["3rd Quarter", transaction_test['balance'].quantile(0.75)])
     writer.writerow(["Standard deviation", transaction_test['balance'].std()])
     writer.writerow(["Variance", transaction_test['balance'].var()])
+    writer.writerow(["Amplitude", transaction_test['balance'].max()-transaction_test['balance'].min()])
