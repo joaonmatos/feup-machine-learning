@@ -82,19 +82,208 @@ with open("statistics/numbers/disposition_type.csv", "w", newline='') as outfile
 
 # %% District
 # Region
+district_region_stats = pd.crosstab(index=district['region'], columns='count')
+district_region_stats["relative"] = round(district_region_stats/district_region_stats.sum() * 100, 4)
+district_region_stats.to_csv("statistics/frequencies/district_region.csv")
+
+with open("statistics/numbers/district_region.csv", "w", newline='') as outfile:
+    writer = csv.writer(outfile)
+    writer.writerow(["Mode", district['region'].mode()[0]])
+    
 # No. of inhabitants
+district_inhabitants_stats = pd.crosstab(index=district['no. of inhabitants'], columns='count')
+district_inhabitants_stats["relative"] = round(district_inhabitants_stats/district_inhabitants_stats.sum() * 100, 4)
+district_inhabitants_stats.to_csv("statistics/frequencies/district_inhabitants.csv")
+
+with open("statistics/numbers/district_inhabitants.csv", "w", newline='') as outfile:
+    writer = csv.writer(outfile)
+    writer.writerow(["Mean", district['no. of inhabitants'].mean()])
+    writer.writerow(["Mode", district['no. of inhabitants'].mode()[0]])
+    writer.writerow(["Median", district['no. of inhabitants'].median()])
+    writer.writerow(["1st Quarter", district['no. of inhabitants'].quantile(0.25)])
+    writer.writerow(["3rd Quarter", district['no. of inhabitants'].quantile(0.75)])
+    writer.writerow(["Standard deviation", district['no. of inhabitants'].std()])
+    writer.writerow(["Variance", district['no. of inhabitants'].var()])
+
 # No. of municipalities with inhabitants < 499
+district_hab_499_stats = pd.crosstab(index=district['no. of municipalities with inhabitants < 499'], columns='count')
+district_hab_499_stats["relative"] = round(district_hab_499_stats/district_hab_499_stats.sum() * 100, 4)
+district_hab_499_stats.to_csv("statistics/frequencies/district_hab_499.csv")
+
+with open("statistics/numbers/district_hab_499.csv", "w", newline='') as outfile:
+    writer = csv.writer(outfile)
+    writer.writerow(["Mean", district['no. of municipalities with inhabitants < 499'].mean()])
+    writer.writerow(["Mode", district['no. of municipalities with inhabitants < 499'].mode()[0]])
+    writer.writerow(["Median", district['no. of municipalities with inhabitants < 499'].median()])
+    writer.writerow(["1st Quarter", district['no. of municipalities with inhabitants < 499'].quantile(0.25)])
+    writer.writerow(["3rd Quarter", district['no. of municipalities with inhabitants < 499'].quantile(0.75)])
+    writer.writerow(["Standard deviation", district['no. of municipalities with inhabitants < 499'].std()])
+    writer.writerow(["Variance", district['no. of municipalities with inhabitants < 499'].var()])
+
 # No. of municipalities with inhabitants 500-1999
+district_hab_1999_stats = pd.crosstab(index=district['no. of municipalities with inhabitants 500-1999'], columns='count')
+district_hab_1999_stats["relative"] = round(district_hab_1999_stats/district_hab_1999_stats.sum() * 100, 4)
+district_hab_1999_stats.to_csv("statistics/frequencies/district_hab_1999.csv")
+
+with open("statistics/numbers/district_hab_1999.csv", "w", newline='') as outfile:
+    writer = csv.writer(outfile)
+    writer.writerow(["Mean", district['no. of municipalities with inhabitants 500-1999'].mean()])
+    writer.writerow(["Mode", district['no. of municipalities with inhabitants 500-1999'].mode()[0]])
+    writer.writerow(["Median", district['no. of municipalities with inhabitants 500-1999'].median()])
+    writer.writerow(["1st Quarter", district['no. of municipalities with inhabitants 500-1999'].quantile(0.25)])
+    writer.writerow(["3rd Quarter", district['no. of municipalities with inhabitants 500-1999'].quantile(0.75)])
+    writer.writerow(["Standard deviation", district['no. of municipalities with inhabitants 500-1999'].std()])
+    writer.writerow(["Variance", district['no. of municipalities with inhabitants 500-1999'].var()])
+
 # No. of municipalities with inhabitants 2000-9999
+district_hab_9999_stats = pd.crosstab(index=district['no. of municipalities with inhabitants 2000-9999'], columns='count')
+district_hab_9999_stats["relative"] = round(district_hab_9999_stats/district_hab_9999_stats.sum() * 100, 4)
+district_hab_9999_stats.to_csv("statistics/frequencies/district_hab_9999.csv")
+
+with open("statistics/numbers/district_hab_9999.csv", "w", newline='') as outfile:
+    writer = csv.writer(outfile)
+    writer.writerow(["Mean", district['no. of municipalities with inhabitants 2000-9999'].mean()])
+    writer.writerow(["Mode", district['no. of municipalities with inhabitants 2000-9999'].mode()[0]])
+    writer.writerow(["Median", district['no. of municipalities with inhabitants 2000-9999'].median()])
+    writer.writerow(["1st Quarter", district['no. of municipalities with inhabitants 2000-9999'].quantile(0.25)])
+    writer.writerow(["3rd Quarter", district['no. of municipalities with inhabitants 2000-9999'].quantile(0.75)])
+    writer.writerow(["Standard deviation", district['no. of municipalities with inhabitants 2000-9999'].std()])
+    writer.writerow(["Variance", district['no. of municipalities with inhabitants 2000-9999'].var()])
+
 # No. of municipalities with inhabitants >10000
+district_hab_10000_stats = pd.crosstab(index=district['no. of municipalities with inhabitants >10000'], columns='count')
+district_hab_10000_stats["relative"] = round(district_hab_10000_stats/district_hab_10000_stats.sum() * 100, 4)
+district_hab_10000_stats.to_csv("statistics/frequencies/district_hab_10000.csv")
+
+with open("statistics/numbers/district_hab_10000.csv", "w", newline='') as outfile:
+    writer = csv.writer(outfile)
+    writer.writerow(["Mean", district['no. of municipalities with inhabitants >10000'].mean()])
+    writer.writerow(["Mode", district['no. of municipalities with inhabitants >10000'].mode()[0]])
+    writer.writerow(["Median", district['no. of municipalities with inhabitants >10000'].median()])
+    writer.writerow(["1st Quarter", district['no. of municipalities with inhabitants >10000'].quantile(0.25)])
+    writer.writerow(["3rd Quarter", district['no. of municipalities with inhabitants >10000'].quantile(0.75)])
+    writer.writerow(["Standard deviation", district['no. of municipalities with inhabitants >10000'].std()])
+    writer.writerow(["Variance", district['no. of municipalities with inhabitants >10000'].var()])
+
 # No. of cities
+district_cities_stats = pd.crosstab(index=district['no. of cities'], columns='count')
+district_cities_stats["relative"] = round(district_cities_stats/district_cities_stats.sum() * 100, 4)
+district_cities_stats.to_csv("statistics/frequencies/district_cities.csv")
+
+with open("statistics/numbers/district_cities.csv", "w", newline='') as outfile:
+    writer = csv.writer(outfile)
+    writer.writerow(["Mean", district['no. of cities'].mean()])
+    writer.writerow(["Mode", district['no. of cities'].mode()[0]])
+    writer.writerow(["Median", district['no. of cities'].median()])
+    writer.writerow(["1st Quarter", district['no. of cities'].quantile(0.25)])
+    writer.writerow(["3rd Quarter", district['no. of cities'].quantile(0.75)])
+    writer.writerow(["Standard deviation", district['no. of cities'].std()])
+    writer.writerow(["Variance", district['no. of cities'].var()])
+
 # Ratio of urban inhabitants
+district_urban_ratio_stats = pd.crosstab(index=district['ratio of urban inhabitants'], columns='count')
+district_urban_ratio_stats["relative"] = round(district_urban_ratio_stats/district_urban_ratio_stats.sum() * 100, 4)
+district_urban_ratio_stats.to_csv("statistics/frequencies/district_urban_ratio.csv")
+
+with open("statistics/numbers/district_urban_ratio.csv", "w", newline='') as outfile:
+    writer = csv.writer(outfile)
+    writer.writerow(["Mean", district['ratio of urban inhabitants'].mean()])
+    writer.writerow(["Mode", district['ratio of urban inhabitants'].mode()[0]])
+    writer.writerow(["Median", district['ratio of urban inhabitants'].median()])
+    writer.writerow(["1st Quarter", district['ratio of urban inhabitants'].quantile(0.25)])
+    writer.writerow(["3rd Quarter", district['ratio of urban inhabitants'].quantile(0.75)])
+    writer.writerow(["Standard deviation", district['ratio of urban inhabitants'].std()])
+    writer.writerow(["Variance", district['ratio of urban inhabitants'].var()])
+    
 # Average salary
-# Unemploymant rate '95
+district_average_salary_stats = pd.crosstab(index=district['average salary'], columns='count')
+district_average_salary_stats["relative"] = round(district_average_salary_stats/district_average_salary_stats.sum() * 100, 4)
+district_average_salary_stats.to_csv("statistics/frequencies/district_average_salary.csv")
+
+with open("statistics/numbers/district_average_salary.csv", "w", newline='') as outfile:
+    writer = csv.writer(outfile)
+    writer.writerow(["Mean", district['average salary'].mean()])
+    writer.writerow(["Mode", district['average salary'].mode()[0]])
+    writer.writerow(["Median", district['average salary'].median()])
+    writer.writerow(["1st Quarter", district['average salary'].quantile(0.25)])
+    writer.writerow(["3rd Quarter", district['average salary'].quantile(0.75)])
+    writer.writerow(["Standard deviation", district['average salary'].std()])
+    writer.writerow(["Variance", district['average salary'].var()])
+
+# unemploymant rate 95
+district_unemploymant_95_stats = pd.crosstab(index=district['unemploymant rate 95'], columns='count')
+district_unemploymant_95_stats["relative"] = round(district_unemploymant_95_stats/district_unemploymant_95_stats.sum() * 100, 4)
+district_unemploymant_95_stats.to_csv("statistics/frequencies/district_unemploymant_95.csv")
+
+with open("statistics/numbers/district_unemploymant_95.csv", "w", newline='') as outfile:
+    writer = csv.writer(outfile)
+    writer.writerow(["Mean", district['unemploymant rate 95'].mean()])
+    writer.writerow(["Mode", district['unemploymant rate 95'].mode()[0]])
+    writer.writerow(["Median", district['unemploymant rate 95'].median()])
+    writer.writerow(["1st Quarter", district['unemploymant rate 95'].quantile(0.25)])
+    writer.writerow(["3rd Quarter", district['unemploymant rate 95'].quantile(0.75)])
+    writer.writerow(["Standard deviation", district['unemploymant rate 95'].std()])
+    writer.writerow(["Variance", district['unemploymant rate 95'].var()])
+
 # Unemploymant rate '96
+district_unemploymant_96_stats = pd.crosstab(index=district['unemploymant rate 96'], columns='count')
+district_unemploymant_96_stats["relative"] = round(district_unemploymant_96_stats/district_unemploymant_96_stats.sum() * 100, 4)
+district_unemploymant_96_stats.to_csv("statistics/frequencies/district_unemploymant_96.csv")
+
+with open("statistics/numbers/district_unemploymant_96.csv", "w", newline='') as outfile:
+    writer = csv.writer(outfile)
+    writer.writerow(["Mean", district['unemploymant rate 96'].mean()])
+    writer.writerow(["Mode", district['unemploymant rate 96'].mode()[0]])
+    writer.writerow(["Median", district['unemploymant rate 96'].median()])
+    writer.writerow(["1st Quarter", district['unemploymant rate 96'].quantile(0.25)])
+    writer.writerow(["3rd Quarter", district['unemploymant rate 96'].quantile(0.75)])
+    writer.writerow(["Standard deviation", district['unemploymant rate 96'].std()])
+    writer.writerow(["Variance", district['unemploymant rate 96'].var()])
+
 # No. of enterpreneurs per 1000 inhabitants
+district_enterpreneurs_stats = pd.crosstab(index=district['no. of enterpreneurs per 1000 inhabitants'], columns='count')
+district_enterpreneurs_stats["relative"] = round(district_enterpreneurs_stats/district_enterpreneurs_stats.sum() * 100, 4)
+district_enterpreneurs_stats.to_csv("statistics/frequencies/district_enterpreneurs.csv")
+
+with open("statistics/numbers/district_enterpreneurs.csv", "w", newline='') as outfile:
+    writer = csv.writer(outfile)
+    writer.writerow(["Mean", district['no. of enterpreneurs per 1000 inhabitants'].mean()])
+    writer.writerow(["Mode", district['no. of enterpreneurs per 1000 inhabitants'].mode()[0]])
+    writer.writerow(["Median", district['no. of enterpreneurs per 1000 inhabitants'].median()])
+    writer.writerow(["1st Quarter", district['no. of enterpreneurs per 1000 inhabitants'].quantile(0.25)])
+    writer.writerow(["3rd Quarter", district['no. of enterpreneurs per 1000 inhabitants'].quantile(0.75)])
+    writer.writerow(["Standard deviation", district['no. of enterpreneurs per 1000 inhabitants'].std()])
+    writer.writerow(["Variance", district['no. of enterpreneurs per 1000 inhabitants'].var()])
+    
 # No. of commited crimes '95
+district_crimes_95_stats = pd.crosstab(index=district['no. of commited crimes 95'], columns='count')
+district_crimes_95_stats["relative"] = round(district_crimes_95_stats/district_crimes_95_stats.sum() * 100, 4)
+district_crimes_95_stats.to_csv("statistics/frequencies/district_crimes_95.csv")
+
+with open("statistics/numbers/district_crimes_95.csv", "w", newline='') as outfile:
+    writer = csv.writer(outfile)
+    writer.writerow(["Mean", district['no. of commited crimes 95'].mean()])
+    writer.writerow(["Mode", district['no. of commited crimes 95'].mode()[0]])
+    writer.writerow(["Median", district['no. of commited crimes 95'].median()])
+    writer.writerow(["1st Quarter", district['no. of commited crimes 95'].quantile(0.25)])
+    writer.writerow(["3rd Quarter", district['no. of commited crimes 95'].quantile(0.75)])
+    writer.writerow(["Standard deviation", district['no. of commited crimes 95'].std()])
+    writer.writerow(["Variance", district['no. of commited crimes 95'].var()])
+    
 # No. of commited crimes '96
+district_crimes_96_stats = pd.crosstab(index=district['no. of commited crimes 96'], columns='count')
+district_crimes_96_stats["relative"] = round(district_crimes_96_stats/district_crimes_96_stats.sum() * 100, 4)
+district_crimes_96_stats.to_csv("statistics/frequencies/district_crimes_96.csv")
+
+with open("statistics/numbers/district_crimes_96.csv", "w", newline='') as outfile:
+    writer = csv.writer(outfile)
+    writer.writerow(["Mean", district['no. of commited crimes 96'].mean()])
+    writer.writerow(["Mode", district['no. of commited crimes 96'].mode()[0]])
+    writer.writerow(["Median", district['no. of commited crimes 96'].median()])
+    writer.writerow(["1st Quarter", district['no. of commited crimes 96'].quantile(0.25)])
+    writer.writerow(["3rd Quarter", district['no. of commited crimes 96'].quantile(0.75)])
+    writer.writerow(["Standard deviation", district['no. of commited crimes 96'].std()])
+    writer.writerow(["Variance", district['no. of commited crimes 96'].var()])
 
 
 # %% Card
