@@ -29,6 +29,13 @@ def parse_string(data):
         return data
 
 
+def parse_date(data):
+    as_str = parse_string(data)
+    if as_str == None or len(as_str) != 6:
+        return None
+    return f"19{as_str[0:2]}-{as_str[2:4]}-{as_str[4:6]}"
+
+
 def parse_row(types, row):
     return [op(item) for op, item in zip(types, row)]
 
@@ -60,7 +67,7 @@ def parse_account(data):
         parse_int,
         parse_int,
         parse_string,
-        parse_string
+        parse_date
     ]
     return [parse_row(types, row) for row in data]
 
@@ -69,7 +76,7 @@ def parse_loan(data):
     types = [
         parse_int,
         parse_int,
-        parse_string,
+        parse_date,
         parse_int,
         parse_int,
         parse_int,
@@ -82,7 +89,7 @@ def parse_transaction(data):
     types = [
         parse_int,
         parse_int,
-        parse_string,
+        parse_date,
         parse_string,
         parse_string,
         parse_float,
@@ -97,7 +104,7 @@ def parse_transaction(data):
 def parse_client(data):
     types = [
         parse_int,
-        parse_string,
+        parse_date,
         parse_int,
         parse_string
     ]
@@ -119,7 +126,7 @@ def parse_card(data):
         parse_int,
         parse_int,
         parse_string,
-        parse_string
+        parse_date
     ]
     return [parse_row(types, row) for row in data]
 
