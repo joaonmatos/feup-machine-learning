@@ -49,7 +49,7 @@ def watch_kneighbors_overfit(x_train, x_test, y_train, y_test):
     train_scores = []
     test_scores = []
 
-    for neighbor in range(1,50):
+    for neighbor in range(1,60):
         kn = KNeighborsClassifier(n_neighbors=neighbor)
         kn.fit(x_train, y_train)
 
